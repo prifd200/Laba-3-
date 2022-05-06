@@ -16,7 +16,7 @@ def laba2(text_name):
                     sentences += len(re.findall(r'[.!?]+', buffer))                                                               # подсчитывает количество предложений
                     puncts += len(re.findall(r'[.!?:;",)\'(\-]', buffer))                                                         # подсчитывает количество знаков препинания
                     digits += len(re.findall(r'\d', buffer))                                                                      # подсчитывает количество цифр
-                    numbers += len(re.findall(r'\b\d+[.,]?\d+\b', buffer))                                                                # подсчитывает количество чисел
+                    numbers += len(re.findall(r'\d+[.,]?\d+\b', buffer))                                                                # подсчитывает количество чисел
                     buffer = f.read(max_buffer_len)                                                                               # читаем очередной блок
                 print(f"В тексте:\n{lines} строк(и); {chars} символов; {words} слов; {sentences} предложений; {puncts} знаков препинания; {digits} цифр; {numbers} чисел")
     except FileNotFoundError:
